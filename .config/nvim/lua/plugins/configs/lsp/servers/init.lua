@@ -9,6 +9,8 @@ local custom_servers = {
   "texlab",
   "ts_ls",
   "eslint",
+  "oxlint",
+  "biome",
   "ruff",
   "tinymist",
   "nil_ls",
@@ -17,6 +19,8 @@ local custom_servers = {
 -- Servers installed via Nix (not Mason)
 local nix_servers = {
   "nil_ls",
+  "oxlint",
+  "biome",
 }
 
 -- Check if server has custom config

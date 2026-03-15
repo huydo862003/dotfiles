@@ -35,6 +35,7 @@
     marksman
     nodePackages_latest.eslint
     oxlint
+    biome
     typescript
     ruff
     texlab
