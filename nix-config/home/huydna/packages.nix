@@ -34,6 +34,7 @@
     jdt-language-server
     marksman
     nodePackages_latest.eslint
+    oxlint
     typescript
     ruff
     texlab
