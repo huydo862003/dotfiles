@@ -14,13 +14,13 @@
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 2;  # Limit boot entries for small /boot
+  boot.loader.systemd-boot.configurationLimit = 2; # Limit boot entries for small /boot
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use smaller busybox-based initrd instead of systemd (saves ~40MB per generation)
   boot.initrd.systemd.enable = false;
   boot.initrd.compressor = "zstd";
-  boot.initrd.compressorArgs = [ "-19" ];  # Max compression for small /boot
+  boot.initrd.compressorArgs = [ "-19" ]; # Max compression for small /boot
 
   # Disable AMD GPU firmware in initrd (saves ~30MB, not needed for early boot)
   hardware.amdgpu.initrd.enable = false;
@@ -53,8 +53,16 @@
   #   };
   # };
 
-  networking.firewall.allowedTCPPorts = [ 2377 7946 4789 ];
-  networking.firewall.allowedUDPPorts = [ 2377 7946 4789 ];
+  networking.firewall.allowedTCPPorts = [
+    2377
+    7946
+    4789
+  ];
+  networking.firewall.allowedUDPPorts = [
+    2377
+    7946
+    4789
+  ];
 
   # Enable mongod
   services.mongodb = {
@@ -74,7 +82,7 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
-  
+
   # USB
   services.udisks2.enable = true;
   services.gvfs.enable = true;

@@ -70,6 +70,7 @@
     quickemu
     qemu
     ghostty
+    ardour
   ];
 
   imports = [
