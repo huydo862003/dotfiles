@@ -70,7 +70,8 @@
     quickemu
     qemu
     ghostty
-    ardour
+    lmms
+    obsidian
   ];
 
   imports = [
