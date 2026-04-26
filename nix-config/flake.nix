@@ -38,6 +38,7 @@
               specialArgs = {
                 inherit arch hostname default-username other-pkgs;
                 inherit nixos-hardware agenix;
+                inputs = { inherit self nixpkgs home-manager nixos-hardware agenix disko; };
               };
               modules = [
                 # Configure nixpkgs
