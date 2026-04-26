@@ -16,5 +16,6 @@
     ./clipboard.nix
     ./sddm.nix
     ./filebrowser.nix
+    ./clamav.nix
   ];
 }
