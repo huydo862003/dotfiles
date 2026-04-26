@@ -73,6 +73,7 @@
     ghostty
     lmms
     obsidian
+    clamav
   ];
 
   imports = [
