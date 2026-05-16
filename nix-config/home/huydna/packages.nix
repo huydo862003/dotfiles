@@ -20,7 +20,7 @@
 
     # Package managers
     yarn
-    pnpm
+    pnpm_11
 
     # Databases
     postgresql_16
