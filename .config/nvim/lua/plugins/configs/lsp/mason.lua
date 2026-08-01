@@ -17,7 +17,7 @@ M.servers = {
   "jsonls",
   "pyright",
   "golangci_lint_ls",
-  "volar",
+  "vue_ls",
   "sqls",
   "elp",
   "clangd",

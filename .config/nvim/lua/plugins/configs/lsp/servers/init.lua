@@ -1,56 +1,35 @@
-local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local mason = require("plugins.configs.lsp.mason")
 
--- Servers with custom configs (filename must match server name)
-local custom_servers = {
-  "lua_ls",
-  "denols",
-  "texlab",
-  "ts_ls",
-  "eslint",
-  "ruff",
-  "tinymist",
-  "nil_ls",
+local custom_configs = {
+  ["lua_ls"] = true,
+  ["denols"] = true,
+  ["texlab"] = true,
+  ["ts_ls"] = true,
+  ["eslint"] = true,
+  ["ruff"] = true,
+  ["tinymist"] = true,
+  ["nil_ls"] = true,
 }
 
--- Servers installed via Nix (not Mason)
-local nix_servers = {
-  "nil_ls",
-}
-
--- Check if server has custom config
-local function has_custom_config(server)
-  for _, name in ipairs(custom_servers) do
-    if name == server then
-      return true
-    end
-  end
-  return false
-end
-
--- Setup Mason-managed servers
-for _, server in ipairs(mason.servers) do
-  local config
-
-  if has_custom_config(server) then
+local function setup(server)
+  local config = {}
+  if custom_configs[server] then
     config = require("plugins.configs.lsp.servers." .. server)
     if type(config) == "function" then
       config = config()
     end
-  else
-    config = { capabilities = capabilities }
   end
-
-  lspconfig[server].setup(config)
+  config.capabilities = config.capabilities or capabilities
+  vim.lsp.config(server, config)
 end
 
--- Setup Nix-provided servers (not managed by Mason)
-for _, server in ipairs(nix_servers) do
-  local config = require("plugins.configs.lsp.servers." .. server)
-  if type(config) == "function" then
-    config = config()
-  end
-  config.capabilities = capabilities
-  lspconfig[server].setup(config)
+-- Mason-managed servers
+for _, server in ipairs(mason.servers) do
+  setup(server)
 end
+
+-- Nix-provided servers (not managed by Mason)
+setup("nil_ls")
+
+vim.lsp.enable(vim.list_extend(mason.servers, { "nil_ls" }))

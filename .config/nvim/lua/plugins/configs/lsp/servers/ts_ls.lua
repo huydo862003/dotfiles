@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 return function()
@@ -18,7 +17,7 @@ return function()
     },
     capabilities = capabilities,
     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-    root_dir = lspconfig.util.root_pattern("package.json"),
+    root_markers = { "package.json" },
     single_file_support = false,
   }
 end
