@@ -18,15 +18,22 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    typerighter = {
+      url = "github:huydo862003/typerighter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, agenix, disko }:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, agenix, disko, typerighter }:
     let
       lib = nixpkgs.lib;
       hosts = [ "x86_64-linux" ];
       hostname = "hell";
       default-username = "huydna";
-      other-pkgs = { };
+      other-pkgs = {
+        typedown-lsp = typerighter.packages.x86_64-linux.typedown-lsp;
+      };
     in
     {
       # NixOS configurations
