@@ -9,7 +9,7 @@
     ruby
     rustup
     go
-    erlang_27
+    beam27Packages.erlang
     php
     racket
 
@@ -33,7 +33,7 @@
     lua-language-server
     jdt-language-server
     marksman
-    nodePackages_latest.eslint
+    eslint
     oxlint
     biome
     typescript
@@ -72,6 +72,6 @@
 
     # Nix development
     nil # Nix LSP
-    nixfmt-rfc-style # Nix formatter (matches flake formatter)
+    nixfmt # Nix formatter (matches flake formatter)
   ];
 }

@@ -41,7 +41,7 @@
   networking.hostName = hostname;
 
   # Faster man page lookups
-  documentation.man.generateCaches = true;
+  documentation.man.cache.enable = true;
 
   # Common system packages (available to all users)
   environment.systemPackages = with pkgs; [

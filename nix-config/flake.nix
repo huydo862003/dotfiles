@@ -78,7 +78,7 @@
         hosts;
 
       # Formatter for `nix fmt`
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
 
       # Checks for CI
       checks.x86_64-linux = {

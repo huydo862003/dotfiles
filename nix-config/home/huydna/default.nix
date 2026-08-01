@@ -1,4 +1,4 @@
-{ pkgs, default-username, ... }:
+{ config, pkgs, default-username, ... }:
 
 {
   imports = [
@@ -42,6 +42,7 @@
   # Firefox with managed bookmarks
   programs.firefox = {
     enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     policies = {
       ManagedBookmarks = [
         { toplevel_name = "Tools"; }
