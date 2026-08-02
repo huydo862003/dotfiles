@@ -74,6 +74,8 @@
         replSetName: dbdiagramrs1
     '';
   };
+  # MongoDB with replica set config hangs on stop waiting for clean replica handoff
+  systemd.services.mongodb.serviceConfig.TimeoutStopSec = 30;
   environment.systemPackages = with pkgs; [
     mongosh-bin
   ];
