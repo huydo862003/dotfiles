@@ -4,10 +4,19 @@ vim.keymap.set("n", "<leader>li", vim.lsp.buf.references, {})
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, {})
 vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "<leader>lf", function()
-  if vim.fn.exists(":EslintFixAll") ~= 0 then
-    vim.cmd("EslintFixAll")
-  else
-    vim.lsp.buf.format({ async = true })
+  -- Run prettier first (sync), then eslint fixes so there's no intermediate flash
+  local prettier_configs = {
+    ".prettierrc", ".prettierrc.json", ".prettierrc.yml", ".prettierrc.yaml",
+    ".prettierrc.json5", ".prettierrc.js", ".prettierrc.cjs", ".prettierrc.mjs",
+    "prettier.config.js", "prettier.config.cjs", "prettier.config.mjs", ".prettierrc.toml",
+  }
+  local root = vim.fs.root(0, prettier_configs)
+  if root then
+    vim.lsp.buf.format({ async = false, filter = function(c) return c.name ~= "eslint" end })
+  end
+  local eslint_clients = vim.lsp.get_clients({ bufnr = 0, name = "eslint" })
+  if #eslint_clients > 0 then
+    vim.lsp.buf.format({ async = false, filter = function(c) return c.name == "eslint" end })
   end
 end, {})
 vim.keymap.set("n", "<leader>ls", vim.lsp.buf.document_symbol, {})

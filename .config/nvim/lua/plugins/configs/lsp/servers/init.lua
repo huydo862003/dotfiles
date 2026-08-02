@@ -10,6 +10,7 @@ local custom_configs = {
   ["ruff"] = true,
   ["tinymist"] = true,
   ["nil_ls"] = true,
+  ["vue_ls"] = true,
 }
 
 local function setup(server)
@@ -32,4 +33,4 @@ end
 -- Nix-provided servers (not managed by Mason)
 setup("nil_ls")
 
-vim.lsp.enable(vim.list_extend(mason.servers, { "nil_ls" }))
+vim.lsp.enable(vim.iter({ mason.servers, { "nil_ls" }}):flatten():totable())
