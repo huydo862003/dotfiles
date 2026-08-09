@@ -21,7 +21,6 @@ M.servers = {
   "sqls",
   "elp",
   "clangd",
-  "cmake",
   "tinymist",
   "texlab",
 }
