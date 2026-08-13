@@ -31,7 +31,7 @@
     grim
     slurp
     wl-clipboard
-    wf-recorder
+    ## wf-recorder # broken: incompatible with current ffmpeg (sample_fmts removed from AVCodec)
     libnotify
 
     # Widgets
