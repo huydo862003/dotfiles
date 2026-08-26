@@ -13,11 +13,14 @@ vim.keymap.set("n", "<leader>lf", function()
   local root = vim.fs.root(0, prettier_configs)
   if root then
     vim.lsp.buf.format({ async = false, filter = function(c) return c.name ~= "eslint" end })
+    local eslint_clients = vim.lsp.get_clients({ bufnr = 0, name = "eslint" })
+    if #eslint_clients > 0 then
+      vim.lsp.buf.format({ async = false, filter = function(c) return c.name == "eslint" end })
+    end
+    return
   end
-  local eslint_clients = vim.lsp.get_clients({ bufnr = 0, name = "eslint" })
-  if #eslint_clients > 0 then
-    vim.lsp.buf.format({ async = false, filter = function(c) return c.name == "eslint" end })
-  end
+  -- Fall through to any available LSP formatter
+  vim.lsp.buf.format({ async = false })
 end, {})
 vim.keymap.set("n", "<leader>ls", vim.lsp.buf.document_symbol, {})
 vim.keymap.set("n", "<leader>lc", vim.lsp.buf.outgoing_calls, {})
