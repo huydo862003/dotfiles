@@ -30,6 +30,8 @@
     apacheHttpd
 
     # Language servers & dev tools
+    stylua
+    tree-sitter
     lua-language-server
     jdt-language-server
     marksman
