@@ -3,10 +3,10 @@
 	name = Huy-DNA
 [credential "https://github.com"]
 	helper = 
-	helper = !/run/current-system/sw/bin/gh auth git-credential
+	helper = !/nix/store/dpiajg8vgzpaq74jc79j01fd5bja3cik-gh-2.98.0/bin/.gh-wrapped auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/run/current-system/sw/bin/gh auth git-credential
+	helper = !/nix/store/dpiajg8vgzpaq74jc79j01fd5bja3cik-gh-2.98.0/bin/.gh-wrapped auth git-credential
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
