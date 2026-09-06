@@ -53,7 +53,7 @@
     ## obsidian
 
     # Communication
-    vesktop # Discord client with better Wayland/tray support
+    # vesktop # Discord client with better Wayland/tray support
     slack
     spotify
 
