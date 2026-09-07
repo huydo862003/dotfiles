@@ -74,6 +74,8 @@
     lmms
     obsidian
     clamav
+    cargo
+    rustup
   ];
 
   imports = [
