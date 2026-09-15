@@ -5,6 +5,7 @@ return {
     lazy = false,
     build = ":TSUpdate",
     config = function()
+      vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/lazy/nvim-treesitter/runtime")
       local ts = require("nvim-treesitter")
 
       vim.api.nvim_create_autocmd("FileType", {
