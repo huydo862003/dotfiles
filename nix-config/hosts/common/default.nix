@@ -74,7 +74,6 @@
     lmms
     obsidian
     clamav
-    cargo
     rustup
   ];
 

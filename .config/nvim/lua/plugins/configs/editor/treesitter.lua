@@ -1,4 +1,6 @@
 local ts = require("nvim-treesitter")
+local ts_root = vim.fn.fnamemodify(debug.getinfo(ts.setup, "S").source:sub(2), ":h:h:h")
+vim.opt.runtimepath:append(ts_root .. "/runtime")
 
 ts.setup({
   -- install_dir defaults to stdpath("data") .. "/site"
