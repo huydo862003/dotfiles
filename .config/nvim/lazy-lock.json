@@ -1,6 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
-  "Coqtail": { "branch": "main", "commit": "0742cf70acb4614a6a5b34c5078f3a2e5ef43b07" },
+  "Coqtail": { "branch": "main", "commit": "b10655900c07bd64ced0e9883ed992ba6f9d48ba" },
   "LuaSnip": { "branch": "master", "commit": "0abc8f390b278c3b4aabc4c004ac8a088b65cf24" },
   "auto-save.nvim": { "branch": "main", "commit": "979b6c82f60cfa80f4cf437d77446d0ded0addf0" },
   "cmp-cmdline": { "branch": "main", "commit": "d126061b624e0af6c3a556428712dd4d4194ec6d" },
@@ -34,7 +34,7 @@
   "presence.nvim": { "branch": "main", "commit": "87c857a56b7703f976d3a5ef15967d80508df6e6" },
   "telescope.nvim": { "branch": "master", "commit": "40aedd8a68c78a656a10a8d62d80c54af59420fb" },
   "transparent.nvim": { "branch": "main", "commit": "792b1d6caff49ba0c166921d78495273d25a7edd" },
-  "typerighter": { "branch": "main", "commit": "0356b5e301f5ac659be13f6719cf484770e9f5d7" },
+  "typerighter": { "branch": "main", "commit": "3491bc5a96554ae83ade4fbc4a67bb772d0785fd" },
   "vim-be-good": { "branch": "master", "commit": "0ae3de14eb8efc6effe7704b5e46495e91931cc5" },
   "vim-fugitive": { "branch": "master", "commit": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0" },
   "vim-tmux-navigator": { "branch": "master", "commit": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432" },
