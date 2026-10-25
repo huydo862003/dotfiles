@@ -17,8 +17,7 @@
   boot.loader.systemd-boot.configurationLimit = 2; # Limit boot entries for small /boot
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use smaller busybox-based initrd instead of systemd (saves ~40MB per generation)
-  boot.initrd.systemd.enable = false;
+
   boot.initrd.compressor = "zstd";
   boot.initrd.compressorArgs = [ "-19" ]; # Max compression for small /boot
 

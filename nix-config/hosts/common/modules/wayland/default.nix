@@ -21,7 +21,7 @@
     # Sway core
     swaylock-effects
     swayidle
-    swww
+    awww
     wofi
 
     # System tray support (SNI/AppIndicator)

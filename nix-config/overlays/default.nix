@@ -9,6 +9,12 @@
       '';
     });
 
+    vesktop = prev.vesktop.overrideAttrs (old: {
+      pnpmDeps = old.pnpmDeps.overrideAttrs {
+        outputHash = "sha256-e74aOOzpaF8AMVeu1tl2WvjCHcb/pwVB1PlHiTIkX20=";
+      };
+    });
+
     mongosh-bin = prev.stdenv.mkDerivation rec {
       pname = "mongosh-bin";
       version = "2.2.6";
