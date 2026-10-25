@@ -1,12 +1,6 @@
 [user]
 	email = huydo862003@gmail.com
 	name = Huy-DNA
-[credential "https://github.com"]
-	helper = 
-	helper = !/nix/store/13hixqsd12vpsgjzc89fn1764ypqrqhk-gh-2.100.0/bin/.gh-wrapped auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/nix/store/13hixqsd12vpsgjzc89fn1764ypqrqhk-gh-2.100.0/bin/.gh-wrapped auth git-credential
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global

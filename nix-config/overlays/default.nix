@@ -15,6 +15,34 @@
       };
     });
 
+    mongodb-7_0-bin = prev.stdenv.mkDerivation rec {
+      pname = "mongodb-7_0-bin";
+      version = "7.0.45";
+
+      src = prev.fetchurl {
+        url = "https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-debian12-${version}.tgz";
+        hash = "sha256-6X55IRpxBqBl2RGQOerUAfMs+7+haBl3/euktKS/H2M=";
+      };
+
+      sourceRoot = "mongodb-linux-x86_64-debian12-${version}";
+
+      nativeBuildInputs = [ prev.autoPatchelfHook ];
+      buildInputs = with prev; [ stdenv.cc.cc.lib curl openssl ];
+
+      installPhase = ''
+        mkdir -p $out/bin
+        cp bin/mongod bin/mongos $out/bin/
+      '';
+
+      meta = with prev.lib; {
+        description = "MongoDB 7.0 server (binary release)";
+        homepage = "https://www.mongodb.com";
+        license = licenses.sspl;
+        platforms = [ "x86_64-linux" ];
+        mainProgram = "mongod";
+      };
+    };
+
     mongosh-bin = prev.stdenv.mkDerivation rec {
       pname = "mongosh-bin";
       version = "2.2.6";

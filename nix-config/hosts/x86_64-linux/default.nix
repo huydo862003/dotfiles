@@ -66,7 +66,7 @@
   # Enable mongod
   services.mongodb = {
     enable = true;
-    package = pkgs.mongodb-7_0;
+    package = pkgs.mongodb-7_0-bin;
     user = "mongodb";
     extraConfig = ''
       replication:
