@@ -34,7 +34,7 @@
   "presence.nvim": { "branch": "main", "commit": "87c857a56b7703f976d3a5ef15967d80508df6e6" },
   "telescope.nvim": { "branch": "master", "commit": "40aedd8a68c78a656a10a8d62d80c54af59420fb" },
   "transparent.nvim": { "branch": "main", "commit": "792b1d6caff49ba0c166921d78495273d25a7edd" },
-  "typerighter": { "branch": "main", "commit": "53806fd32d4d60942d4ad31cfa319214525dd3bc" },
+  "typerighter": { "branch": "main", "commit": "9504e86361a43acffdfde39ef0a85704eac0cb10" },
   "vim-be-good": { "branch": "master", "commit": "0ae3de14eb8efc6effe7704b5e46495e91931cc5" },
   "vim-fugitive": { "branch": "master", "commit": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0" },
   "vim-tmux-navigator": { "branch": "master", "commit": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432" },
