@@ -2,6 +2,7 @@ return {
   "huydo862003/typerighter",
   branch = "main",
   lazy = false,
+  submodules = false,
   init = function()
     local base = vim.fn.stdpath("data") .. "/lazy/typerighter/editors/nvim"
     vim.opt.runtimepath:prepend(base)
