@@ -6,7 +6,12 @@
     enable = true;
     package = pkgs.swayfx;
   };
-  xdg.portal.wlr.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "*";
+  };
 
   # Cursor theme (fixes disappearing cursor in some web apps)
   environment.sessionVariables = {
@@ -21,17 +26,20 @@
     # Sway core
     swaylock-effects
     swayidle
-    awww
+    swww
     wofi
 
     # System tray support (SNI/AppIndicator)
     libappindicator-gtk3
 
+    # Streaming & recording
+    (wrapOBS { plugins = [ obs-studio-plugins.wlrobs ]; })
+
     # Screenshot & recording
     grim
     slurp
     wl-clipboard
-    ## wf-recorder # broken: incompatible with current ffmpeg (sample_fmts removed from AVCodec)
+    wf-recorder
     libnotify
 
     # Widgets
